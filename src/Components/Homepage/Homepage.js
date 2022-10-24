@@ -5,7 +5,7 @@ const Homepage = () => {
     return (
         <div className='row'>
 
-            <div className="col-md-9 my-5">
+            <div className="col-md-9 mt-5">
                 <h2 className="h1 text-center">Discover Our Popular Courses</h2>
                 <p className="text-center">Explore our comprehensive course library to deliver the best training material to
                     your team!
@@ -21,6 +21,7 @@ const Homepage = () => {
                                 <p>Basics of UX design and Adobe XD to create working solution by combining UI with your UX
                                     design. </p>
                                 <p className="fw-bolder prices fs-4">Price : 11.99$</p>
+                                <button className='btn btn-primary'>Add to Cart</button>
                             </div>
                         </div>
                     </div>
@@ -28,7 +29,7 @@ const Homepage = () => {
 
             </div >
 
-            <div className="flex-shrink-0 p-3 col-md-3">
+            <div className="flex-shrink-0 p-3 pt-5 col-md-3">
 
                 <ul className="list-unstyled ps-0">
                     <li className="mb-1">
