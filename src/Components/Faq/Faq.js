@@ -15,12 +15,12 @@ const Faq = () => {
                             <h2 class="accordion-header" id="headingOne">
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    How do I take a Our course?
+                                    How do I take a LearnCoding course?
                                 </button>
                             </h2>
                             <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
                                 data-bs-parent="#accordionExample">
-                                <div class="accordion-body">Our courses are entirely on-demand and they can be accessed from several different devices and platforms, including a desktop and laptop.
+                                <div class="accordion-body">LearnCoding courses are entirely on-demand and they can be accessed from several different devices and platforms, including a desktop and laptop.
                                 </div>
                             </div>
                         </div>
