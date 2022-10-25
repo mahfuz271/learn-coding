@@ -9,6 +9,7 @@ import Signup from "../Components/Signup/Signup";
 import PublicRoute from "./PublicRoute";
 import PrivateRoute from "./PrivateRoute";
 import Logout from "../Components/Logout/Logout";
+import Courses from "../Components/Courses/Courses";
 
 const Router = createBrowserRouter([
     {
@@ -17,7 +18,17 @@ const Router = createBrowserRouter([
         children: [
             {
                 path: "/",
-                element: <Homepage />
+                element: <Homepage />,
+                loader: () => {
+                    return fetch(`${process.env.REACT_APP_SERVER_URL}/courses`);
+                }
+            },
+            {
+                path: "/courses",
+                element: <Courses />,
+                loader: () => {
+                    return fetch(`${process.env.REACT_APP_SERVER_URL}/courses`);
+                }
             },
             {
                 path: "/blog",

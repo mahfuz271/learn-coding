@@ -62,9 +62,91 @@ a.active-link {
 }
 
 .prices {
-    color: #289BDE;
+    color: #5D5FEF;
 }
+
 .courses {
     height: 100%;
-    border: 1px solid #E8E8E8;
+    border: 1px solid #BBF0FF80;
+}
+
+header.active {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+}
+
+footer {
+    padding: 0 !important;
+    background-color: #33333D !important;
+}
+
+footer * {
+    color: #91929A !important;
+}
+
+.colormain {
+    color: #5D5FEF;
+}
+
+.index-banner {
+    background-color: #BBF0FF80 !important;
+    padding-top: 130px;
+}
+
+.index-banner::after,
+.index-banner::before {
+    content: "";
+    background: url(dots-pattern-pink.svg) no-repeat;
+    position: absolute;
+    height: 250px;
+    width: 110px;
+}
+
+.index-banner::after {
+    bottom: 0;
+    left: 0;
+}
+
+.index-banner::before {
+    top: 25%;
+    right: 0;
+}
+
+.index-banner-img {
+    position: relative;
+    border-radius: 5%;
+    margin-bottom: 50px;
+}
+
+.index-banner-img img {
+    position: relative;
+    z-index: 2;
+    border-radius: 5%;
+}
+
+.index-banner-img::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50px;
+    z-index: 1;
+    border: 3px solid #F68C20;
+    border-radius: inherit;
+    height: 100%;
+    width: 80%;
+}
+
+.banner-content {
+    position: relative;
+    z-index: 3;
+}
+
+.banner-heading {
+    font-size: 50px;
+    font-weight: 600;
+}
+
+.banner-brief {
+    font-size: 22px;
 }
