@@ -91,7 +91,7 @@ footer * {
 
 .index-banner {
     background-color: #BBF0FF80 !important;
-    padding-top: 130px;
+    padding-top: 30px;;
 }
 
 .index-banner::after,
@@ -163,7 +163,7 @@ footer * {
 }
 
 .dark .bg-light,
-.Toastify__toast {
+.dark .Toastify__toast {
     background-color: #333 !important;
 }
 
@@ -173,4 +173,11 @@ footer * {
 
 .dark .bg-black {
     background-color: #eee !important;
+}
+
+@media screen and (min-width:768px) {
+
+    .index-banner {
+        padding-top: 130px;
+    }
 }

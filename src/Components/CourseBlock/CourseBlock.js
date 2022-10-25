@@ -13,7 +13,7 @@ const CourseBlock = ({ limit, title }) => {
             </p>
             <div className="row row-cols-1 row-cols-lg-3 row-cols-md-2 mt-3 mb-5 mx-0 gy-5">
                 {courses.map((c) => {
-                    return (<div className="col align-self-stretch">
+                    return (<div className="col align-self-stretch" key={c.id}>
                         <Link to={`/course/${c.id}`} className="link-dark row rounded courses me-md-1 text-decoration-none">
                             <div className="col-12 px-0">
                                 <img src={`${process.env.REACT_APP_SERVER_URL}/${c.img}`} className="rounded w-100 h-100" alt="" />

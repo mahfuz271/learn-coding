@@ -10,6 +10,8 @@ import PublicRoute from "./PublicRoute";
 import PrivateRoute from "./PrivateRoute";
 import Logout from "../Components/Logout/Logout";
 import Courses from "../Components/Courses/Courses";
+import Course from "../Components/Courses/Course";
+import BuyCourse from "../Components/Courses/BuyCourse";
 
 const Router = createBrowserRouter([
     {
@@ -28,6 +30,20 @@ const Router = createBrowserRouter([
                 element: <Courses />,
                 loader: () => {
                     return fetch(`${process.env.REACT_APP_SERVER_URL}/courses`);
+                }
+            },
+            {
+                path: "/course/:id",
+                element: <Course />,
+                loader: () => {
+                    return fetch(`${process.env.REACT_APP_SERVER_URL}/courses`);
+                }
+            },
+            {
+                path: "/buy-course/:id",
+                element: <PrivateRoute><BuyCourse /></PrivateRoute>,
+                loader: ({ params }) => {
+                    return fetch(`${process.env.REACT_APP_SERVER_URL}/course/${params.id}`);
                 }
             },
             {

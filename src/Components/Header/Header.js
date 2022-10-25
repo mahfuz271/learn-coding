@@ -38,11 +38,11 @@ const Header = () => {
             <div className="container">
                 <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between">
                     <Link to="/" className="d-flex align-items-center col-md-auto mb-2 mb-md-0 text-dark text-decoration-none">
-                        <h3 className="mb-0 d-flex align-items-center justify-content-center text-uppercase logo"><i class="fas fa-book-reader me-2"></i> <span>LearnCoding</span></h3>
+                        <h3 className="mb-0 d-flex align-items-center justify-content-center text-uppercase logo"><i className="fas fa-book-reader me-2"></i> <span>LearnCoding</span></h3>
                     </Link>
 
                     <ul className="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 main_menu">
-                        <li className="nav-item"><NavLink to="/" className={(({ isActive }) => isActive ? activeClassName : inActiveClass)} end>Home</NavLink></li>
+                        <li><NavLink to="/" className={(({ isActive }) => isActive ? activeClassName : inActiveClass)} end>Home</NavLink></li>
                         <li><NavLink to="/courses" className={(({ isActive }) => isActive ? activeClassName : inActiveClass)} end>Courses</NavLink></li>
                         <li><NavLink to="/faq" className={(({ isActive }) => isActive ? activeClassName : inActiveClass)} end>FAQ</NavLink></li>
                         <li><NavLink to="/blog" className={(({ isActive }) => isActive ? activeClassName : inActiveClass)} end>Blog</NavLink></li>
