@@ -14,7 +14,7 @@ const Course = () => {
                 <div className="col-md-8 mt-5">
                     <div className="row rounded courses me-lg-1" ref={ref}>
                         <div className="col-12 col-sm-4 px-0">
-                            <img src={`${process.env.REACT_APP_SERVER_URL}/${course.img}`} className="rounded w-100 h-100" alt="" />
+                            <img src={`/${course.img}`} className="rounded w-100 h-100" alt="" />
                         </div>
                         <div className="col-12 col-sm-8 py-3 ps-4">
                             <h3>{course.title}</h3>

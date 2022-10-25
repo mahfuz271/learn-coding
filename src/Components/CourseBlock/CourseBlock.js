@@ -16,7 +16,7 @@ const CourseBlock = ({ limit, title }) => {
                     return (<div className="col align-self-stretch" key={c.id}>
                         <Link to={`/course/${c.id}`} className="link-dark row rounded courses me-md-1 text-decoration-none">
                             <div className="col-12 px-0">
-                                <img src={`${process.env.REACT_APP_SERVER_URL}/${c.img}`} className="rounded w-100 h-100" alt="" />
+                                <img src={`/${c.img}`} className="rounded w-100 h-100" alt="" />
                             </div>
                             <div className="col-12 align-self-center py-3 ps-4">
                                 <h4>{c.title}</h4>
