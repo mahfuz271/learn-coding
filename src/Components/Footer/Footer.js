@@ -7,9 +7,9 @@ const Footer = () => {
         <div className="container mt-5">
             <footer className="py-3 my-4">
                 <ul className="nav justify-content-center border-bottom pb-3 mb-3">
-                    <li className="nav-item"><NavLink to="/" exact className={inActiveClass} end>Courses</NavLink></li>
-                    <li className="nav-item"><NavLink to="/faq" exact className={inActiveClass} end>FAQ</NavLink></li>
-                    <li className="nav-item"><NavLink to="/blog" exact className={inActiveClass} end>Blog</NavLink></li>
+                    <li className="nav-item"><NavLink to="/" className={inActiveClass}>Courses</NavLink></li>
+                    <li className="nav-item"><NavLink to="/faq" className={inActiveClass}>FAQ</NavLink></li>
+                    <li className="nav-item"><NavLink to="/blog" className={inActiveClass}>Blog</NavLink></li>
                 </ul>
                 <p className="text-center text-muted">© 2022 LearnCoding</p>
             </footer>

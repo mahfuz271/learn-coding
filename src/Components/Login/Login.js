@@ -1,15 +1,57 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../Contexts/UserContext';
+import { toast } from 'react-toastify';
 
 const Login = () => {
+    const { signIn, loading, setLoading, user } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+    const [error, setError] = useState(null);
+    const from = location.state?.from?.pathname || '/';
+
+    const handleSubmit = event => {
+        event.preventDefault();
+
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+
+        setError(null);
+
+        if (email.length < 1) {
+            setError('Enter your Email.');
+            setLoading(false);
+            return;
+        }
+
+        if (password.length < 1) {
+            setError('Enter password.');
+            setLoading(false);
+            return;
+        }
+
+        signIn(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                form.reset();
+                setLoading(false);
+                toast("Login Success!")
+                navigate(from, { replace: true })
+            })
+            .catch(error => { setError(error.message); setLoading(false); });
+    }
+
     return (
         <div className="m-auto col-md-6 mt-5">
             <h2>Hello ! Welcome back.</h2>
             <p>Log in with your data that you entered during Your registration.</p>
-            <form className="mt-5">
-                <div className="form-group">
+            <form className="mt-5" onSubmit={handleSubmit}>
+                {error ? <p className='alert alert-danger'>{error}</p> : ''}
+                <div className="form-group mt-4">
                     <label className="form-label text-primary" htmlFor="exampleFormControlInput1">Email address</label>
-                    <input className="form-control" id="exampleFormControlInput1" type="email" placeholder="Exampl@email.com" required="" />
+                    <input className="form-control" id="exampleFormControlInput1" name='email' type="email" placeholder="Exampl@email.com" required="" />
                 </div>
                 <div className="form-group mt-4">
                     <div className="d-flex justify-content-between">
@@ -17,11 +59,11 @@ const Login = () => {
                         <button className="btn">Forgot Password</button>
                     </div>
                     <div className="password-wrap position-relative">
-                        <input className="form-control pe-5" id="inputPassword5" type="password" placeholder="Enter password" required="" />
+                        <input className="form-control pe-5" id="inputPassword5" name="password" type="password" placeholder="Enter password" required="" />
                     </div>
                 </div>
+                <button className="btn btn-primary w-100 mt-5 submit-btn" type="submit" disabled={loading}>Start now !</button>
             </form>
-            <button className="btn btn-primary w-100 mt-5 submit-btn" type="submit">Start now !</button>
             <div className="my-4 text-center"><span className="mx-3 span-or text-secondary">OR</span></div>
             <button className="btn btn-outline-secondary goolge-signin w-100 submit-btn" type="button"> <img className="me-3" src="/img/google-icon.svg" alt="google" />Start now !</button>
             <button className="btn btn-outline-secondary goolge-signin w-100 submit-btn mt-3" type="button"> <img className="me-3" src="/img/GitHub-Mark-32px.png" alt="github" />Start now !</button>

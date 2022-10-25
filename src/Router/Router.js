@@ -6,6 +6,7 @@ import Main from "../Layout/Main";
 import Faq from "../Components/Faq/Faq";
 import Login from "../Components/Login/Login";
 import Signup from "../Components/Signup/Signup";
+import PublicRoute from "./PublicRoute";
 
 const Router = createBrowserRouter([
     {
@@ -26,11 +27,11 @@ const Router = createBrowserRouter([
             },
             {
                 path: "/login",
-                element: <Login />
+                element: <PublicRoute><Login /></PublicRoute>
             },
             {
                 path: "/signup",
-                element: <Signup />
+                element: <PublicRoute><Signup /></PublicRoute>
             },
 
 

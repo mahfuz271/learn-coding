@@ -1,12 +1,18 @@
 import React, { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { AuthContext } from '../../Contexts/UserContext';
 import LocalStore from '../../Storage/Storage';
+import { toast } from 'react-toastify';
 
 const Header = () => {
-    const { user } = { user: false };
+    const { user, logOut } = useContext(AuthContext);
     let activeClassName = "nav-link px-2 link-dark active-link";
     let inActiveClass = "nav-link px-2 link-dark";
-
+    const handleClick = () => {
+        logOut().then(() => {
+            toast("Logout success!");
+        });
+    }
     return (
         <header className="py-3 border-bottom">
             <div className="container">
@@ -16,20 +22,20 @@ const Header = () => {
                     </Link>
 
                     <ul className="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 main_menu">
-                        <li><NavLink to="/" exact className={(({ isActive }) => isActive ? activeClassName : inActiveClass)} end>Courses</NavLink></li>
-                        <li><NavLink to="/faq" exact className={(({ isActive }) => isActive ? activeClassName : inActiveClass)} end>FAQ</NavLink></li>
-                        <li><NavLink to="/blog" exact className={(({ isActive }) => isActive ? activeClassName : inActiveClass)} end>Blog</NavLink></li>
+                        <li><NavLink to="/" className={(({ isActive }) => isActive ? activeClassName : inActiveClass)} end>Courses</NavLink></li>
+                        <li><NavLink to="/faq" className={(({ isActive }) => isActive ? activeClassName : inActiveClass)} end>FAQ</NavLink></li>
+                        <li><NavLink to="/blog" className={(({ isActive }) => isActive ? activeClassName : inActiveClass)} end>Blog</NavLink></li>
                     </ul>
 
                     {ToggleDarkMode()}
 
                     {user ? <div className="text-end d-flex mt-2 align-items-center justify-content-center">
-                        <Link to="/profile" className="d-block link-dark text-decoration-none"><img src="https://github.com/mdo.png" alt="" title="" width="32" height="32" className="rounded-circle" /></Link>
-                        <Link to="/logout" class="btn btn-outline-danger ms-3">Logout</Link>
+                        <Link to="/profile" className="d-block link-dark text-decoration-none"><img src={user.photoURL} alt={user.displayName} title={user.displayName} width="32" height="32" className="rounded-circle" /></Link>
+                        <button type="button" className="btn btn-outline-danger ms-3" onClick={handleClick}>Logout</button>
                     </div> :
                         <div className="text-end mt-2">
-                            <Link to="/login" class="btn btn-outline-primary me-2">Login</Link>
-                            <Link to="/signup" class="btn btn-primary">Sign-up</Link>
+                            <Link to="/login" className="btn btn-outline-primary me-2">Login</Link>
+                            <Link to="/signup" className="btn btn-primary">Sign-up</Link>
                         </div>}
                 </div>
             </div>
@@ -46,9 +52,9 @@ const ToggleDarkMode = () => {
     }
 
     return (
-        <div class="form-check form-switch col-12 col-md-auto mb-2 justify-content-center mb-md-0 mt-2">
-            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" checked={darkmode} onClick={handleDarkmode} />
-            <label class="form-check-label" htmlFor="flexSwitchCheckDefault">Darkmode</label>
+        <div className="form-check form-switch col-12 col-md-auto mb-2 justify-content-center mb-md-0 mt-2">
+            <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" checked={darkmode} onChange={handleDarkmode} />
+            <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Darkmode</label>
         </div>
     );
 }
