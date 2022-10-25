@@ -4,7 +4,7 @@ import { AuthContext } from '../../Contexts/UserContext';
 import { toast } from 'react-toastify';
 
 const Login = () => {
-    const { signIn, loading, setLoading, signInWithGoogle } = useContext(AuthContext);
+    const { signIn, loading, setLoading, signInWithGoogle, signInWithGithub } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
     const [error, setError] = useState(null);
@@ -15,6 +15,14 @@ const Login = () => {
             setLoading(false);
             toast("Login success!")
             navigate(from);
+        })
+            .catch(error => { navigate(error.message); setLoading(false); });
+    }
+    const handleGithubSignIn = (event) => {
+        signInWithGithub().then(() => {
+            setLoading(false);
+            toast("Login success!")
+            navigate('/');
         })
             .catch(error => { navigate(error.message); setLoading(false); });
     }
@@ -48,7 +56,7 @@ const Login = () => {
                 toast("Login Success!")
                 navigate(from, { replace: true })
             })
-            .catch(error => { setError(error.message); setLoading(false); });
+            .catch(error => { toast(error.message); setLoading(false); });
     }
 
     return (
@@ -73,8 +81,8 @@ const Login = () => {
                 <button className="btn btn-primary w-100 mt-5 submit-btn" type="submit" disabled={loading}>Start now !</button>
             </form>
             <div className="my-4 text-center"><span className="mx-3 span-or text-secondary">OR</span></div>
-            <button className="btn btn-outline-secondary w-100 submit-btn" type="button" onClick={handleGoogleSignIn} > <img className="me-3" src="/img/google-icon.svg" alt="Google"/>Start now !</button>
-            <button className="btn btn-outline-secondary goolge-signin w-100 submit-btn mt-3" type="button"> <img className="me-3" src="/img/GitHub-Mark-32px.png" alt="github" />Start now !</button>
+            <button className="btn btn-outline-secondary w-100 submit-btn" type="button" onClick={handleGoogleSignIn} > <img className="me-3" src="/img/google-icon.svg" alt="Google" />Start now !</button>
+            <button className="btn btn-outline-secondary goolge-signin w-100 submit-btn mt-3" type="button" onClick={handleGithubSignIn}> <img className="me-3" src="/img/GitHub-Mark-32px.png" alt="github" />Start now !</button>
             <span className="card-text mt-5 d-block text-center">Don’t have an account? <Link className="text-focus" to="/signup"> Sign up</Link></span>
         </div>
     );
