@@ -72,7 +72,7 @@ const Login = () => {
                 <div className="form-group mt-4">
                     <div className="d-flex justify-content-between">
                         <label className="form-label text-primary d-flex" htmlFor="inputPassword5">Password</label>
-                        <button className="btn">Forgot Password</button>
+                        <button className="btn" type='button'>Forgot Password</button>
                     </div>
                     <div className="password-wrap position-relative">
                         <input className="form-control pe-5" id="inputPassword5" name="password" type="password" placeholder="Enter password" required="" />

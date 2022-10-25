@@ -67,7 +67,7 @@ const Signup = () => {
                 updateUser(name, photoURL).then(() => {
                     form.reset();
                     setLoading(false);
-                    toast("Signup success! now you can login.")
+                    toast("Signup success!")
                     navigate("/login");
                 })
                     .catch(error => { setError(error.message); setLoading(false); });
