@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import CourseBlock from '../CourseBlock/CourseBlock';
 import Courses from '../Courses/Courses';
 
 const Homepage = () => {
@@ -23,7 +24,15 @@ const Homepage = () => {
                     </div>
                 </div>
             </section>
-            <Courses></Courses>
+
+            <div className='container'>
+                <div className='row'>
+
+                    <div className="col-md-12 mt-5">
+                        <CourseBlock limit="3" title="Discover Our Popular Courses"></CourseBlock>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };

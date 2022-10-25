@@ -7,7 +7,8 @@ const Footer = () => {
         <footer className="container-fluid mt-5 shadow">
             <footer className="py-3">
                 <ul className="nav justify-content-center border-bottom pb-3 mb-3">
-                    <li className="nav-item"><NavLink to="/" className={inActiveClass}>Courses</NavLink></li>
+                    <li className="nav-item"><NavLink to="/" className={inActiveClass}>Home</NavLink></li>
+                    <li className="nav-item"><NavLink to="/courses" className={inActiveClass}>Courses</NavLink></li>
                     <li className="nav-item"><NavLink to="/faq" className={inActiveClass}>FAQ</NavLink></li>
                     <li className="nav-item"><NavLink to="/blog" className={inActiveClass}>Blog</NavLink></li>
                 </ul>

@@ -150,3 +150,27 @@ footer * {
 .banner-brief {
     font-size: 22px;
 }
+
+
+.dark {
+    background-color: #111 !important;
+    color: #eee;
+}
+
+.dark *,
+.dark a.active-link {
+    color: #eee !important;
+}
+
+.dark .bg-light,
+.Toastify__toast {
+    background-color: #333 !important;
+}
+
+.dark .bg-white {
+    background-color: #000 !important;
+}
+
+.dark .bg-black {
+    background-color: #eee !important;
+}

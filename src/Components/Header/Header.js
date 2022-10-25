@@ -17,7 +17,14 @@ const Header = () => {
 
     // create an event listener
     useEffect(() => {
-        window.addEventListener("resize", handleResize)
+        window.addEventListener("resize", handleResize);
+        handleResize();
+        let dark = LocalStore('darkmode')==true;
+        if(dark){
+            document.querySelector("body").classList.add('dark');
+        }else{
+            document.querySelector("body").classList.remove('dark');
+        }
     })
     const { user } = useContext(AuthContext);
     const location = useLocation();
@@ -35,6 +42,7 @@ const Header = () => {
                     </Link>
 
                     <ul className="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 main_menu">
+                        <li className="nav-item"><NavLink to="/" className={(({ isActive }) => isActive ? activeClassName : inActiveClass)} end>Home</NavLink></li>
                         <li><NavLink to="/courses" className={(({ isActive }) => isActive ? activeClassName : inActiveClass)} end>Courses</NavLink></li>
                         <li><NavLink to="/faq" className={(({ isActive }) => isActive ? activeClassName : inActiveClass)} end>FAQ</NavLink></li>
                         <li><NavLink to="/blog" className={(({ isActive }) => isActive ? activeClassName : inActiveClass)} end>Blog</NavLink></li>
