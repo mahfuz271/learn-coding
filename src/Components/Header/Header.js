@@ -24,7 +24,7 @@ const Header = () => {
                     {ToggleDarkMode()}
 
                     {user ? <div className="text-end d-flex mt-2 align-items-center justify-content-center">
-                        <Link to="/profile" className="d-block link-dark text-decoration-none"><img src={user.photoURL} alt={user.displayName} title={user.displayName} width="32" height="32" className="rounded-circle" /></Link>
+                        <Link to="#" className="d-block link-dark text-decoration-none"><img src={user.photoURL} alt={user.displayName} title={user.displayName} width="32" height="32" className="rounded-circle" /></Link>
                         <Link to="/logout" className="btn btn-outline-danger ms-3">Logout</Link>
                     </div> :
                         <div className="text-end mt-2">

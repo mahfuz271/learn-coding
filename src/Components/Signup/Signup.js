@@ -7,7 +7,16 @@ const Signup = () => {
 
     const navigate = useNavigate();
     const [error, setError] = useState(null);
-    const { createUser, updateUser, loading, setLoading, user } = useContext(AuthContext);
+    const { createUser, updateUser, loading, setLoading, signInWithGoogle } = useContext(AuthContext);
+
+    const handleGoogleSignIn = (event) => {
+        signInWithGoogle().then(() => {
+            setLoading(false);
+            toast("Login success!")
+            navigate('/');
+        })
+            .catch(error => { navigate(error.message); setLoading(false); });
+    }
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -86,7 +95,7 @@ const Signup = () => {
                 </div>
                 <button className="btn btn-primary w-100 mt-5 submit-btn" type="submit" disabled={loading}>Start now !</button>
                 <div className="text-center my-4"><span className="mx-3 span-or text-secondary">OR</span></div>
-                <button className="btn btn-outline-secondary w-100 submit-btn" type="button"> <img className="me-3" src="/img/google-icon.svg" alt="Google" />Start now !</button>
+                <button className="btn btn-outline-secondary w-100 submit-btn" type="button" onClick={handleGoogleSignIn} > <img className="me-3" src="/img/google-icon.svg" alt="Google"/>Start now !</button>
                 <button className="btn btn-outline-secondary goolge-signin w-100 submit-btn mt-3" type="button"> <img className="me-3" src="/img/GitHub-Mark-32px.png" alt="github" />Start now !</button>
                 <span className="card-text mt-5 d-block text-center">Already have an account?  <Link className="text-focus" to="/login"> Login</Link></span>
             </form>
