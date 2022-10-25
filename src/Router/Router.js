@@ -12,6 +12,7 @@ import Logout from "../Components/Logout/Logout";
 import Courses from "../Components/Courses/Courses";
 import Course from "../Components/Courses/Course";
 import BuyCourse from "../Components/Courses/BuyCourse";
+import OrderPlaced from "../Components/Courses/OrderPlaced";
 
 const Router = createBrowserRouter([
     {
@@ -42,6 +43,13 @@ const Router = createBrowserRouter([
             {
                 path: "/buy-course/:id",
                 element: <PrivateRoute><BuyCourse /></PrivateRoute>,
+                loader: ({ params }) => {
+                    return fetch(`${process.env.REACT_APP_SERVER_URL}/course/${params.id}`);
+                }
+            },
+            {
+                path: "/order-placed/:id",
+                element: <PrivateRoute><OrderPlaced /></PrivateRoute>,
                 loader: ({ params }) => {
                     return fetch(`${process.env.REACT_APP_SERVER_URL}/course/${params.id}`);
                 }

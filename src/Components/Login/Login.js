@@ -16,7 +16,7 @@ const Login = () => {
             toast("Login success!")
             navigate(from);
         })
-            .catch(error => { navigate(error.message); setLoading(false); });
+            .catch(error => { toast(error.message); setLoading(false); });
     }
     const handleGithubSignIn = (event) => {
         signInWithGithub().then(() => {
@@ -24,7 +24,7 @@ const Login = () => {
             toast("Login success!")
             navigate('/');
         })
-            .catch(error => { navigate(error.message); setLoading(false); });
+            .catch(error => { toast(error.message); setLoading(false); });
     }
     const handleSubmit = event => {
         event.preventDefault();

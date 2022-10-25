@@ -27,7 +27,7 @@ const Sidebar = () => {
                 </button>
                 <div className="collapse show" id="account-collapse">
                     <ul className="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                        <li><Link to="/#" className="link-dark d-inline-flex text-decoration-none rounded">Profile</Link></li>
+                        <li><Link to="#" className="link-dark d-inline-flex text-decoration-none rounded">Profile</Link></li>
                         <li><Link to="#" className="link-dark d-inline-flex text-decoration-none rounded">Settings</Link></li>
                         <li><Link to="/logout" className="link-dark d-inline-flex text-decoration-none rounded">Logout</Link></li>
                     </ul>
