@@ -1,0 +1,25 @@
+[debug] [2022-10-25T15:20:22.875Z] ----------------------------------------------------------------------
+[debug] [2022-10-25T15:20:22.877Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\HP\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only hosting
+[debug] [2022-10-25T15:20:22.878Z] CLI Version:   11.15.0
+[debug] [2022-10-25T15:20:22.878Z] Platform:      win32
+[debug] [2022-10-25T15:20:22.878Z] Node Version:  v16.15.1
+[debug] [2022-10-25T15:20:22.879Z] Time:          Tue Oct 25 2022 21:20:22 GMT+0600 (Bangladesh Standard Time)
+[debug] [2022-10-25T15:20:22.879Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-10-25T15:20:22.949Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-10-25T15:20:22.949Z] > authorizing via signed-in user (mahafujer@gmail.com)
+[debug] [2022-10-25T15:20:22.950Z] [iam] checking project learncoding-assignment10 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-10-25T15:20:22.952Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/learncoding-assignment10:testIamPermissions [none]
+[debug] [2022-10-25T15:20:22.952Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/learncoding-assignment10:testIamPermissions x-goog-quota-user=projects/learncoding-assignment10
+[debug] [2022-10-25T15:20:22.952Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/learncoding-assignment10:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-10-25T15:20:24.523Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/learncoding-assignment10:testIamPermissions 200
+[debug] [2022-10-25T15:20:24.523Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/learncoding-assignment10:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-10-25T15:20:24.524Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/learncoding-assignment10 [none]
+[debug] [2022-10-25T15:20:25.172Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/learncoding-assignment10 200
+[debug] [2022-10-25T15:20:25.172Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/learncoding-assignment10 {"projectId":"learncoding-assignment10","projectNumber":"1091852000318","displayName":"LEARNCODING-ASSIGNMENT10","name":"projects/learncoding-assignment10","resources":{"hostingSite":"learncoding-assignment10"},"state":"ACTIVE","etag":"1_fa8f4d6c-0559-4742-8347-f58f1b76e7b4"}
+[info] 
+[info] === Deploying to 'learncoding-assignment10'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2022-10-25T15:20:25.176Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/learncoding-assignment10/versions [none]
+[debug] [2022-10-25T15:20:25.176Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/learncoding-assignment10/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
