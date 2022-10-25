@@ -2,17 +2,11 @@ import React, { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/UserContext';
 import LocalStore from '../../Storage/Storage';
-import { toast } from 'react-toastify';
 
 const Header = () => {
-    const { user, logOut } = useContext(AuthContext);
+    const { user } = useContext(AuthContext);
     let activeClassName = "nav-link px-2 link-dark active-link";
     let inActiveClass = "nav-link px-2 link-dark";
-    const handleClick = () => {
-        logOut().then(() => {
-            toast("Logout success!");
-        });
-    }
     return (
         <header className="py-3 border-bottom">
             <div className="container">
@@ -31,7 +25,7 @@ const Header = () => {
 
                     {user ? <div className="text-end d-flex mt-2 align-items-center justify-content-center">
                         <Link to="/profile" className="d-block link-dark text-decoration-none"><img src={user.photoURL} alt={user.displayName} title={user.displayName} width="32" height="32" className="rounded-circle" /></Link>
-                        <button type="button" className="btn btn-outline-danger ms-3" onClick={handleClick}>Logout</button>
+                        <Link to="/logout" className="btn btn-outline-danger ms-3">Logout</Link>
                     </div> :
                         <div className="text-end mt-2">
                             <Link to="/login" className="btn btn-outline-primary me-2">Login</Link>

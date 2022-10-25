@@ -7,6 +7,8 @@ import Faq from "../Components/Faq/Faq";
 import Login from "../Components/Login/Login";
 import Signup from "../Components/Signup/Signup";
 import PublicRoute from "./PublicRoute";
+import PrivateRoute from "./PrivateRoute";
+import Logout from "../Components/Logout/Logout";
 
 const Router = createBrowserRouter([
     {
@@ -28,6 +30,10 @@ const Router = createBrowserRouter([
             {
                 path: "/login",
                 element: <PublicRoute><Login /></PublicRoute>
+            },
+            {
+                path: "/logout",
+                element: <PrivateRoute><Logout /></PrivateRoute>
             },
             {
                 path: "/signup",

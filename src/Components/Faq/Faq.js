@@ -39,9 +39,9 @@ const Faq = () => {
                             </div>
                         </div>
                         <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingt">
+                            <h2 class="accordion-header" id="headingt2">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#headingt" aria-expanded="false" aria-controls="headingt">
+                                    data-bs-target="#headingt" aria-expanded="false" aria-controls="headingt2">
                                     Is LearnCoding an accredited institution? Do I receive anything after I complete a course?
                                 </button>
                             </h2>
@@ -52,9 +52,9 @@ const Faq = () => {
                             </div>
                         </div>
                         <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingf">
+                            <h2 class="accordion-header" id="headingf2">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#headingf" aria-expanded="false" aria-controls="headingf">
+                                    data-bs-target="#headingf" aria-expanded="false" aria-controls="headingf2">
                                     What if I don’t like a course I purchased?
                                 </button>
                             </h2>
